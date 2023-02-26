@@ -1,11 +1,5 @@
 const products = [];
 const reqid = 1;
-let titleAdd;
-let DescriptionAdd;
-let PriceAdd;
-let ImageAdd;
-let IdAdd;
-let StockAdd;
 
 class ProductManager {
 
@@ -21,20 +15,21 @@ class ProductManager {
     //Metodos
     //Metodo nuevo producto
     addProduct() {
-        const newProduct = new ProductManager(
-            titleAdd = "", //Ingrese el nombre del nuevo producto
-            DescriptionAdd = "", //Ingrese la descripcion del nuevo producto
-            PriceAdd = parseInt("0"), //ingrese el precio del nuevo producto
-            ImageAdd = "", //ingrese extencion de imagen del producto
-            IdAdd = parseInt("0"), //Ingrese id del producto
-            StockAdd = parseInt("0"), //Ingrese numero de stock del producto
+        const ProductNew = new ProductManager(
+            "", //Ingrese el nombre del nuevo producto
+            "", //Ingrese la descripcion del nuevo producto
+            parseInt("0"), //ingrese el precio del nuevo producto
+            "", //ingrese extencion de imagen del producto
+            parseInt("0"), //Ingrese id del producto
+            parseInt("0"), //Ingrese numero de stock del producto
         )
-        return (newProduct)
+        return (ProductNew)
     }
 
     //Metodo que muestra los productos
     getProduct() {
-        return(products)
+        return (products)
+
     }
 
 }
@@ -60,14 +55,11 @@ const Product2 = new ProductManager(
 products.push(Product2)
 
 const newProduct = new ProductManager()
-console.log(titleAdd + "-----------------")
 
-if (newProduct.addProduct()) {
-    products.push(newProduct.addProduct())
-} else {
-    console.log("Todas las variables del pruducto nuevo son requeridas, comprueba los campos")
-}
+// if (newProduct.addProduct()) {
+products.push(newProduct.addProduct())
+// } else {
+//     console.log("Todas las variables del pruducto nuevo son requeridas, comprueba los campos")
+// }
 
-
-
-console.log(getProduct);
+console.log(newProduct.getProduct())
