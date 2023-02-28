@@ -1,6 +1,13 @@
 const products = [];
 let reqid = 1;
 
+let TitleAdd;
+let DescAdd;
+let PriceAdd;
+let ImgAdd;
+let StockAdd;
+
+
 class ProductManager {
 
     constructor(Title, Description, Price, Image, Id, Stock) {
@@ -16,22 +23,32 @@ class ProductManager {
     //Metodo nuevo producto
     addProduct() {
         const ProductNew = new ProductManager(
-            "", //Ingrese el nombre del nuevo producto
-            "", //Ingrese la descripcion del nuevo producto
-            parseInt("0"), //ingrese el precio del nuevo producto
-            "", //ingrese extencion de imagen del producto
+            TitleAdd = "", //Ingrese el nombre del nuevo producto
+            DescAdd = "", //Ingrese la descripcion del nuevo producto
+            PriceAdd = parseInt("0"), //ingrese el precio del nuevo producto
+            ImgAdd = "", //ingrese extencion de imagen del producto
             reqid += 1, //Ingrese id del producto
-            parseInt("0"), //Ingrese numero de stock del producto
+            StockAdd = parseInt("0"), //Ingrese numero de stock del producto
         )
-        return (ProductNew)
+        if (!TitleAdd == "" && !DescAdd == "" && !PriceAdd == 0 && !ImgAdd == "" && !StockAdd == 0) {
+            return (ProductNew)
+        }else{
+            console.log("Todos los campos son requeridos, por favor verifique la información")
+        }
     }
 
     //Metodo que muestra los productos
     getProduct() {
         return (products)
-
     }
 
+    //Buscador de productos
+    // getProductByid() {
+    //     let SearchId = "2"
+    //     if (products.match(/2/gi)) {
+    //         return (products)
+    //     }
+    // }
 }
 
 const Product1 = new ProductManager(
@@ -56,10 +73,7 @@ products.push(Product2)
 
 const newProduct = new ProductManager()
 
-// if (newProduct.addProduct()) {
 products.push(newProduct.addProduct())
-// } else {
-//     console.log("Todas las variables del pruducto nuevo son requeridas, comprueba los campos")
-// }
+
 
 console.log(newProduct.getProduct())
