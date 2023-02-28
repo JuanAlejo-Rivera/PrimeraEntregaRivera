@@ -1,10 +1,5 @@
 const products = [];
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-
-const reqid = getRandomInt(1000)
+let reqid = 1;
 
 class ProductManager {
 
@@ -25,7 +20,7 @@ class ProductManager {
             "", //Ingrese la descripcion del nuevo producto
             parseInt("0"), //ingrese el precio del nuevo producto
             "", //ingrese extencion de imagen del producto
-            reqid, //Ingrese id del producto
+            reqid += 1, //Ingrese id del producto
             parseInt("0"), //Ingrese numero de stock del producto
         )
         return (ProductNew)
@@ -44,7 +39,7 @@ const Product1 = new ProductManager(
     "Cerveza clasica hecha con los sabores tipos colombianos como el maiz y lúpulo",
     8000,
     "https://scontent.feoh4-4.fna.fbcdn.net/v/t39.30808-6/269623123_134127492385408_867247191007009107_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeHebtDhuABHISV9LVsxUHzcBSN9lz4YFnoFI32XPhgWekAcbPOVa8wKBykdx-Z655DI7dy13vlxtcDnO__q5Tkc&_nc_ohc=xC0cy5qutrcAX-yCTce&_nc_ht=scontent.feoh4-4.fna&oh=00_AfAVSmGMXuBQkkzitCBX_keX9ajbpYHUJzlW1Lm9pcyWww&oe=63FFD659",
-    12,
+    reqid += 1,
     17
 )
 products.push(Product1)
@@ -54,7 +49,7 @@ const Product2 = new ProductManager(
     "Cerveza clasica hecha con los sabores tipos colombianos como el lúpulo y batata",
     8000,
     "https://ennuestrocampo.co/wp-content/uploads/2022/02/CervezadelValleSinu-Panzenu.jpg",
-    34,
+    reqid += 1,
     13
 )
 products.push(Product2)
